@@ -7,7 +7,7 @@ const Shop = ({ product, handleAddToCart, cart }) => {
     const {name, price, img, seller, ratings} = product;
 
     return (
-        <div className='col-md-3'>
+        <div className='col-md-4'>
             <div className="card h-100">
                 <img className='card-img-top img-fluid' src={img} alt="" />
                 <div className='card-body'>
@@ -16,13 +16,15 @@ const Shop = ({ product, handleAddToCart, cart }) => {
                     <p className='mb-1'>Seller: {seller}</p>
                     <p className='mb-1'>Rating: {ratings} stars</p>
                 </div>
-                <div className='d-flex justify-content-around mb-3'>
+                <div className='d-flex justify-content-between m-4'>
                     <button onClick={() => handleAddToCart(product)} className='bg-warning p-3 btn fw-bold' id='addToCart-btn' data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Add to Cart</button>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Details
+                        Details Info
                     </button>
                 </div>
             </div>
+
+            {/* Sidebar sections */}
             <div class="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header bg-light">
                     <button type="button" class="btn-close btn-danger text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
